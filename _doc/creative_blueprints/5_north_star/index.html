@@ -1,0 +1,113 @@
+<style>
+  .mode-landscape .sl-layout { flex-direction: row; }
+  .mode-portrait .sl-layout { flex-direction: column; }
+  .mode-landscape .sl-left { width: 54%; }
+  .mode-landscape .sl-right { width: 46%; }
+  .mode-portrait .sl-left { width: 100%; }
+  .mode-portrait .sl-right { width: 100%; }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="sl-layout flex h-full gap-6 p-10">
+
+    <!-- Left: Operation definition + formula -->
+    <div class="sl-left flex flex-col justify-center gap-4">
+
+      <div>
+        <div class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-1">Projected Impact — Based on Your Inputs</div>
+        <h2 class="text-3xl font-black text-slate-900">North Star Metric</h2>
+        <p class="text-slate-500 text-sm mt-1">The one number that tells you GatewayHub is working.</p>
+      </div>
+
+      <!-- Primary operation -->
+      <div class="bg-blue-50 border border-blue-200 rounded-2xl p-5">
+        <div class="text-blue-700 font-bold text-xs uppercase tracking-widest mb-2">Weekly Verified Operations</div>
+        <div class="text-slate-900 font-bold text-lg mb-1">Payments Processed</div>
+        <div class="text-slate-600 text-xs leading-relaxed mb-4">
+          A completed, confirmed payment transaction routed through the platform — with a gateway response received and the outcome logged. Clicks, logins, and page views are not operations.
+        </div>
+
+        <!-- Formula box -->
+        <div class="bg-white border border-blue-100 rounded-xl p-4">
+          <div class="text-xs font-bold text-slate-500 uppercase tracking-wide mb-3">Weekly Volume Formula</div>
+
+          <!-- Assumption chip -->
+          <div class="inline-flex items-center gap-1.5 bg-amber-100 border border-amber-200 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+            <span>⚠</span> Assumption — adjust this to your volume
+          </div>
+
+          <div class="text-sm text-slate-700 font-mono space-y-1">
+            <div class="flex flex-wrap items-center gap-1.5">
+              <span class="bg-slate-100 px-2 py-0.5 rounded text-slate-800">500 orders/day</span>
+              <span class="text-slate-400">×</span>
+              <span class="bg-slate-100 px-2 py-0.5 rounded text-slate-800">7 days</span>
+              <span class="text-slate-400">=</span>
+              <span class="bg-blue-600 text-white px-3 py-0.5 rounded font-bold">3,500 payments / week</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Secondary operation -->
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+        <div class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-1">Secondary Operation</div>
+        <div class="text-slate-900 font-semibold text-sm">Orders Routed via Smart Engine</div>
+        <div class="text-slate-500 text-xs mt-0.5">Each payment decision made by the routing logic — logged, auditable, and improvable over time.</div>
+      </div>
+
+    </div>
+
+    <!-- Right: Value & ROI projection -->
+    <div class="sl-right flex flex-col justify-center gap-4">
+
+      <div class="bg-slate-900 rounded-2xl p-6 flex flex-col gap-4">
+        <div class="text-xs font-bold uppercase tracking-widest text-slate-400">Projected Value Derivation</div>
+
+        <!-- Value per operation -->
+        <div>
+          <div class="text-slate-400 text-xs mb-1">Recovery value per routed payment</div>
+          <div class="text-xs font-mono text-slate-300 leading-relaxed">
+            avg. order value <span class="text-amber-400">$80</span> × 3.2% routing lift = <span class="text-white font-bold">$2.56 recovered / payment</span>
+          </div>
+          <div class="text-xs text-amber-600 mt-1">⚠ 3.2% = mid-range estimate; adjust to your measured lift</div>
+        </div>
+
+        <div class="w-full h-px bg-slate-700"></div>
+
+        <!-- Weekly value -->
+        <div>
+          <div class="text-slate-400 text-xs mb-1">Recovered revenue — weekly</div>
+          <div class="text-xs font-mono text-slate-300 mb-1">3,500 payments × 3.2% × $80 =</div>
+          <div class="text-3xl font-black text-blue-400">$8,960 / week</div>
+        </div>
+
+        <div class="w-full h-px bg-slate-700"></div>
+
+        <!-- Annual value -->
+        <div>
+          <div class="text-slate-400 text-xs mb-1">Recovered revenue — annual</div>
+          <div class="text-xs font-mono text-slate-300 mb-1">$8,960 × 52 weeks =</div>
+          <div class="text-4xl font-black text-white">$465,920</div>
+        </div>
+
+        <div class="w-full h-px bg-slate-700"></div>
+
+        <!-- Ops savings -->
+        <div>
+          <div class="text-slate-400 text-xs mb-1">Ops time saved — annual</div>
+          <div class="text-xs font-mono text-slate-300">
+            8 hrs/wk × <span class="text-amber-400">$30/hr</span> × 52 wks = <span class="text-white font-bold">$12,480 / year</span>
+          </div>
+          <div class="text-xs text-amber-600 mt-1">⚠ Adjust hrs and hourly rate to your ops team</div>
+        </div>
+      </div>
+
+      <!-- Assumption notice -->
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800 leading-relaxed">
+        <strong>Inputs to calibrate:</strong> daily order volume (500), average order value ($80), routing success lift (3.2%), ops hours recovered (8/wk), and staff hourly cost ($30). These are projections from your inputs — not measured results.
+      </div>
+
+    </div>
+
+  </div>
+</section>
