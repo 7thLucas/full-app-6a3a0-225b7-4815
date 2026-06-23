@@ -1,0 +1,66 @@
+<style>
+  .mode-landscape .sl-layout { flex-direction: row; }
+  .mode-portrait .sl-layout { flex-direction: column; }
+  .mode-landscape .sl-content { width: 54%; }
+  .mode-landscape .sl-visual { width: 46%; }
+  .mode-portrait .sl-content { width: 100%; flex: 1; }
+  .mode-portrait .sl-visual { width: 100%; height: 38%; }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="sl-layout flex h-full">
+
+    <!-- Left: Content column -->
+    <div class="sl-content flex flex-col justify-between p-12">
+
+      <!-- Top badge -->
+      <div>
+        <span class="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-500 inline-block"></span>
+          Ecommerce Infrastructure
+        </span>
+      </div>
+
+      <!-- Headline + tagline -->
+      <div>
+        <h1 class="text-5xl font-black text-slate-900 leading-tight mb-5">
+          One Platform.<br/>
+          Every Gateway.<br/>
+          <span class="text-blue-600">Zero Revenue Leaks.</span>
+        </h1>
+        <p class="text-base text-slate-500 leading-relaxed max-w-sm">
+          Centralized payment routing, real-time transaction monitoring, and unified order management — built for merchants who can't afford failed payments.
+        </p>
+      </div>
+
+      <!-- Attribution -->
+      <div>
+        <data-attribution />
+      </div>
+    </div>
+
+    <!-- Right: Visual panel -->
+    <div class="sl-visual relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900">
+      <img
+        src="https://api.qb-deck.quantumbyte.ai/common/image-generation?prompt=sleek%20fintech%20payment%20gateway%20dashboard%20dark%20navy%20UI%20with%20transaction%20flow%20charts%20glowing%20data%20streams%20multiple%20payment%20providers%20unified%20interface%20professional%20editorial"
+        alt="GatewayHub Platform"
+        class="w-full h-full object-cover opacity-50"
+      />
+
+      <!-- Floating product badge -->
+      <div class="absolute bottom-10 left-8 right-8">
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 rounded-2xl px-6 py-4">
+          <div class="text-white text-2xl font-black tracking-tight">GatewayHub</div>
+          <div class="text-blue-200 text-xs font-semibold tracking-widest uppercase mt-0.5">Payment Gateway Platform</div>
+        </div>
+      </div>
+
+      <!-- Stat pill top-right -->
+      <div class="absolute top-8 right-8 bg-blue-600 rounded-xl px-4 py-2 text-white text-center">
+        <div class="text-xl font-black">4–6×</div>
+        <div class="text-blue-100 text-xs">fewer portals to manage</div>
+      </div>
+    </div>
+
+  </div>
+</section>
