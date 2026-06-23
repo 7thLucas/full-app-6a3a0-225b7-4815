@@ -1,59 +1,108 @@
-# Product Overview — GatewayHub
+# Product Overview — PayFlow
 
 ## What It Is
-A centralized ecommerce payment gateway platform that gives merchants and payment operations teams a unified command center for payment routing, transaction monitoring, multi-gateway management, and order processing. It replaces the fragmented toolset most growing merchants depend on — multiple gateway portals, manual reconciliation spreadsheets, and zero routing intelligence.
+A minimal freelancer payment and billing tool. Freelancers create a payment request (amount + description), share or trigger a Razorpay UPI checkout, and see an instant success/failure result — with every transaction saved locally. No backend required in the MVP. No wallet, no marketplace, no super-app logic.
+
+## What It Is NOT
+- Not a wallet or balance system
+- Not a marketplace or escrow platform
+- Not a multi-gateway routing engine
+- No fake cashback, fake balance, or reward mechanics
+- Strictly: create request → Razorpay UPI checkout → result → local save
 
 ## The Problem It Solves
-Online merchants lose revenue to:
-- Payment failures with no clear diagnostic path (industry average failure rate: ~4–5% without routing)
-- Fragmented dashboards across 4–6 separate payment provider portals
-- Manual order reconciliation consuming 6–10 hours of ops time per week
-- No intelligent routing — all payments hit one gateway regardless of geography, card type, or success odds
+Freelancers waste time and lose professionalism collecting payments:
+- No simple tool to generate a payment request on the spot
+- Clients pay via UPI but freelancers have no record except bank SMS
+- Chasing payments means manual follow-up with no status visibility
+- Professional invoicing tools are overkill for quick one-off project payments
 
 ## The Solution
-A single platform where merchants connect multiple payment gateways (Stripe, PayPal, Midtrans, local acquirers), define intelligent routing rules, monitor transactions in real time, and reconcile orders automatically. One login, one source of truth, every payment decision logged.
+Three screens and one button. Freelancer enters amount + service description → taps Pay → Razorpay handles the UPI checkout → result screen confirms success or failure with Payment ID, and the transaction is saved locally for future reference. Operational in under a minute.
 
-Merchants using smart routing typically recover a 2–4% lift in payment success rates; at $80 average order value and 500 orders/day, that recovery represents substantial weekly revenue that would otherwise be abandoned.
+## User / Persona
+**Freelancer**: a solo professional (designer, developer, writer, consultant) who does project-based or gig work and needs to collect client payments quickly via UPI — without signing up for a full invoicing suite or banking portal.
+- Primary need: collect payment fast, look professional doing it
+- Secondary need: have a local record of what was paid, when, for what
 
-## Users / Personas
-- **Merchant / Business Owner**: needs to know revenue is flowing and failures are resolved fast; primary success measure is payment success rate and revenue uptime
-- **Payment Operations Manager**: configures routing rules, monitors failure rates, manages gateway credentials, owns webhook reliability
-- **Finance / Reconciliation Team**: needs accurate, auto-reconciled transaction records for reporting; currently loses 6–10 hrs/week to manual matching
+## Screens & User Flow
+**Home Screen → Payment Screen → Result Screen**
 
-## Core Features
-1. **Multi-Gateway Hub** — Connect and manage multiple payment gateways (Stripe, PayPal, Midtrans, local acquirers) from one dashboard; view health status per gateway
-2. **Smart Routing Engine** — Route payments by geography, card type, amount, or custom if/then rules to maximize success rates; all decisions logged and auditable
-3. **Real-Time Transaction Monitor** — Live feed of all payment events with status codes, error descriptions, retry actions, and full event history
-4. **Order Management** — Unified order view with payment status, fulfillment state, and automatic order-to-payment reconciliation
-5. **Failure Analytics** — Pattern detection across gateways, card types, and time windows; surfaces fix recommendations, not just error codes
-6. **Webhook Manager** — Configure, test, and monitor webhook endpoints across all connected gateways from one interface
-7. **Merchant Onboarding** — Self-serve gateway credential setup with a guided integration flow; operational in under an hour
+### Home Screen
+- Clean freelancer dashboard
+- Two primary actions: "Create Payment Request" and "Quick UPI Payment"
+- Recent transactions list (local storage): amount, description (service name), status
+- Minimal, card-based layout
 
-## Positioning
-Professional-grade payment operations for growing online businesses — the tool that enterprise merchant teams build internally, delivered as a turnkey platform. Precise, calm, trustworthy: ops-grade reliability without enterprise overhead or cost.
+### Payment Screen
+- Amount input (required)
+- Description / service name input (optional)
+- "Pay / Generate Payment" button
+- On tap: opens Razorpay Checkout
+- Amount converted to paise (amount × 100) before passing to Razorpay
+- Prefill contact and email optional
+- Uses Razorpay Key ID (placeholder in MVP)
+
+### Result Screen
+- Payment status: Success (green) / Failed (red)
+- If success: display Payment ID, amount, description
+- Simple centered layout, no extra features
+- On success: transaction saved locally before navigation
+
+## Razorpay Integration
+- Package: `razorpay_flutter` (Flutter) / Razorpay Web Checkout SDK (web build)
+- Events handled: `PAYMENT_SUCCESS`, `PAYMENT_ERROR`
+- On success: save transaction to local storage → navigate to ResultScreen
+- On failure: navigate to ResultScreen with failed status
+- Key ID: placeholder in MVP (real key injected via env variable)
+
+## Local Data Storage
+Each transaction record stores:
+- `amount` (numeric)
+- `description` (service name string)
+- `paymentId` (Razorpay Payment ID, from success event)
+- `status` ("success" | "failed")
+- `timestamp`
+
+No backend required in MVP. No sync, no cloud, no auth.
+
+## Architecture (Flutter / Web-equivalent)
+```
+lib/main.dart
+screens/
+  home_screen.dart
+  payment_screen.dart
+  result_screen.dart
+services/
+  razorpay_service.dart
+models/
+  transaction_model.dart
+widgets/
+  transaction_tile.dart
+```
 
 ## Brand
-- **Working name**: GatewayHub
-- **Tone**: Precise, calm, trustworthy — data-forward without being cold
-- **Visual direction**: Deep navy / electric blue primary palette, white surfaces, amber accent for alerts and assumptions
-- **Voice**: Plainspoken, numbers-first, no overpromise
+- **Name**: PayFlow
+- **Tone**: Fast, clean, no-nonsense — built for the person who works alone and moves quickly
+- **Visual direction**: Minimal fintech; white surfaces, card-based, indigo primary (#4F46E5), green success (#22C55E), red failure (#EF4444), slate text
+- **UI principle**: No heavy animations, fast performance, mobile-first
 
-## Scope (MVP)
-- Dashboard: overview of transaction volume, payment success rate, and revenue
-- Gateway management: connect/disconnect gateways, credential storage, health status per gateway
-- Transaction log: searchable, filterable, exportable
-- Routing rules builder: simple if/then condition UI
-- Order list with unified payment status
-- Basic failure analytics (pattern by gateway and card type)
+## Scope (MVP — strict)
+- Home screen with recent transactions from localStorage
+- Payment screen with amount + description inputs → Razorpay checkout
+- Result screen with success/failure state + Payment ID on success
+- Local transaction persistence (localStorage / shared_preferences)
+- Error-free runnable app, production-ready file structure
 
-## Strategic Principles
-1. **One source of truth** — never make the user context-switch between gateway portals
-2. **Actionable, not informational** — every data point surfaces a next action
-3. **Trust through transparency** — every routing decision is logged and auditable; no black-box behavior
+## Scalability (Future Phases)
+Architecture must support future upgrades without refactoring:
+1. Invoice PDF generation
+2. Client management system
+3. Cloud sync backend
+4. Payment analytics dashboard
 
-## Key Reference Numbers (illustrative, for projection)
-- Typical daily order volume (assumption chip): 500 orders/day
-- Average order value (assumption chip): $80
-- Routing success lift range: 2–4% (industry reference; 3.2% used as mid estimate)
-- Ops time recovered from reconciliation automation: 8 hrs/week
-- Average ops staff hourly cost (assumption chip): $30/hr
+## Key Reference Numbers (for North Star projection)
+- Active freelancer sends (assumption chip): 10 payment requests/week
+- Average project payment (assumption chip): ₹5,000 per request
+- Time saved per payment vs. manual bank coordination: ~15 min
+- Freelancer's effective hourly rate (assumption chip): ₹500/hr
