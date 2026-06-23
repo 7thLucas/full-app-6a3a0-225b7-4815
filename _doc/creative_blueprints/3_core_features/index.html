@@ -1,0 +1,76 @@
+<style>
+  .mode-landscape .sl-layout { flex-direction: column; }
+  .mode-portrait .sl-layout { flex-direction: column; }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="sl-layout flex flex-col h-full p-10">
+
+    <!-- Header -->
+    <div class="mb-5">
+      <div class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-1">Built for Every Role</div>
+      <h2 class="text-3xl font-black text-slate-900">Core Features</h2>
+    </div>
+
+    <!-- Persona chips -->
+    <div class="flex gap-2 mb-5">
+      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white border border-blue-600">
+        🏪 Merchant
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-200 text-slate-500">
+        ⚙️ Payment Ops
+      </span>
+      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-200 text-slate-500">
+        📊 Finance Team
+      </span>
+    </div>
+
+    <!-- Feature card grid -->
+    <div class="grid grid-cols-3 gap-4 flex-1">
+
+      <!-- Card 1 -->
+      <div class="bg-blue-600 rounded-2xl p-5 flex flex-col">
+        <div class="text-2xl mb-3">🔌</div>
+        <div class="text-white font-bold text-sm mb-1">Multi-Gateway Hub</div>
+        <div class="text-blue-100 text-xs leading-relaxed flex-1">Connect Stripe, PayPal, Midtrans, and local acquirers. View gateway health status — all from one dashboard.</div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-slate-900 rounded-2xl p-5 flex flex-col">
+        <div class="text-2xl mb-3">🔀</div>
+        <div class="text-white font-bold text-sm mb-1">Smart Routing Engine</div>
+        <div class="text-slate-300 text-xs leading-relaxed flex-1">Route by geography, card type, amount, or custom if/then rules. Every decision logged and auditable — no black box.</div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col">
+        <div class="text-2xl mb-3">📡</div>
+        <div class="text-slate-900 font-bold text-sm mb-1">Real-Time Monitor</div>
+        <div class="text-slate-500 text-xs leading-relaxed flex-1">Live transaction feed with status codes, error descriptions, retry actions, and full event history per payment.</div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col">
+        <div class="text-2xl mb-3">📦</div>
+        <div class="text-slate-900 font-bold text-sm mb-1">Order Management</div>
+        <div class="text-slate-500 text-xs leading-relaxed flex-1">Unified order view — payment status, fulfillment state, and automatic order-to-payment reconciliation built in.</div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 flex flex-col">
+        <div class="text-2xl mb-3">🔍</div>
+        <div class="text-slate-900 font-bold text-sm mb-1">Failure Analytics</div>
+        <div class="text-slate-600 text-xs leading-relaxed flex-1">Pattern detection by gateway, card type, and time window. Surfaces fix recommendations — not just error codes.</div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col">
+        <div class="text-2xl mb-3">🔗</div>
+        <div class="text-slate-900 font-bold text-sm mb-1">Webhook Manager</div>
+        <div class="text-slate-500 text-xs leading-relaxed flex-1">Configure, test, and monitor webhook endpoints across all connected gateways from a single interface.</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
