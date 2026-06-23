@@ -1,0 +1,85 @@
+<style>
+  .mode-landscape .sl-layout { flex-direction: row; }
+  .mode-portrait .sl-layout { flex-direction: column; }
+  .mode-landscape .sl-left { width: 56%; }
+  .mode-landscape .sl-right { width: 44%; }
+  .mode-portrait .sl-left { width: 100%; }
+  .mode-portrait .sl-right { width: 100%; flex: 1; }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="sl-layout flex h-full">
+
+    <!-- Left: Problem + Solution narrative -->
+    <div class="sl-left flex flex-col justify-center gap-5 p-12">
+
+      <div>
+        <div class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-1">The Situation</div>
+        <h2 class="text-3xl font-black text-slate-900">Why this platform exists</h2>
+      </div>
+
+      <!-- Problem -->
+      <div class="bg-red-50 border border-red-100 rounded-2xl p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs font-black">!</span>
+          </div>
+          <span class="text-red-700 font-bold text-xs uppercase tracking-widest">The Problem</span>
+        </div>
+        <p class="text-slate-800 font-semibold text-base leading-snug mb-3">
+          Payment failures are costing merchants real revenue — with no clear path to fix them.
+        </p>
+        <ul class="text-slate-600 text-sm space-y-1.5">
+          <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5 flex-shrink-0">▸</span>Industry average failure rate: 4–5% without smart routing</li>
+          <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5 flex-shrink-0">▸</span>Merchants juggle 4–6 separate gateway portals with no unified view</li>
+          <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5 flex-shrink-0">▸</span>6–10 hrs of ops time lost weekly to manual order reconciliation</li>
+          <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5 flex-shrink-0">▸</span>No routing logic — payments hit one gateway regardless of success odds</li>
+        </ul>
+      </div>
+
+      <!-- Solution -->
+      <div class="bg-blue-50 border border-blue-100 rounded-2xl p-5">
+        <div class="flex items-center gap-2 mb-3">
+          <div class="w-5 h-5 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs font-black">✓</span>
+          </div>
+          <span class="text-blue-700 font-bold text-xs uppercase tracking-widest">The Solution</span>
+        </div>
+        <p class="text-slate-800 font-semibold text-base leading-snug mb-3">
+          A single command center that connects every gateway, routes intelligently, and surfaces every failure with an action.
+        </p>
+        <ul class="text-slate-600 text-sm space-y-1.5">
+          <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 flex-shrink-0">▸</span>One login replaces 4–6 separate gateway portals</li>
+          <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 flex-shrink-0">▸</span>Smart routing engine maximizes payment success per transaction</li>
+          <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 flex-shrink-0">▸</span>Automatic order-to-payment reconciliation — no spreadsheets</li>
+          <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5 flex-shrink-0">▸</span>Every routing decision logged and auditable — no black-box behavior</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right: Visual with stat overlay -->
+    <div class="sl-right relative overflow-hidden bg-gradient-to-b from-slate-900 to-blue-950">
+      <img
+        src="https://api.qb-deck.quantumbyte.ai/common/image-generation?prompt=merchant%20overwhelmed%20by%20multiple%20fragmented%20payment%20portals%20screens%20scattered%20data%20chaos%20versus%20calm%20unified%20command%20center%20fintech%20editorial%20illustration%20dark%20background"
+        alt="Problem vs Solution"
+        class="w-full h-full object-cover opacity-40"
+      />
+
+      <!-- Stat overlays -->
+      <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8 text-center">
+        <div class="bg-red-500 bg-opacity-20 border border-red-400 border-opacity-40 rounded-2xl px-6 py-4 w-full">
+          <div class="text-4xl font-black text-white">~4–5%</div>
+          <div class="text-red-200 text-xs font-medium mt-1">avg. payment failure rate<br/>without routing intelligence</div>
+        </div>
+
+        <div class="text-white text-2xl font-black opacity-40">↓</div>
+
+        <div class="bg-blue-500 bg-opacity-20 border border-blue-400 border-opacity-40 rounded-2xl px-6 py-4 w-full">
+          <div class="text-4xl font-black text-white">+2–4%</div>
+          <div class="text-blue-200 text-xs font-medium mt-1">payment success lift<br/>with GatewayHub smart routing</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
