@@ -1,36 +1,44 @@
 <style>
   .mode-landscape .sl-layout { flex-direction: row; }
   .mode-portrait .sl-layout { flex-direction: column; }
-  .mode-landscape .sl-content { width: 54%; }
-  .mode-landscape .sl-visual { width: 46%; }
+  .mode-landscape .sl-content { width: 52%; }
+  .mode-landscape .sl-visual { width: 48%; }
   .mode-portrait .sl-content { width: 100%; flex: 1; }
-  .mode-portrait .sl-visual { width: 100%; height: 38%; }
+  .mode-portrait .sl-visual { width: 100%; height: 40%; }
 </style>
 
 <section class="w-full h-full overflow-auto bg-white">
   <div class="sl-layout flex h-full">
 
-    <!-- Left: Content column -->
+    <!-- Left: Content -->
     <div class="sl-content flex flex-col justify-between p-12">
 
       <!-- Top badge -->
       <div>
-        <span class="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
-          <span class="w-1.5 h-1.5 rounded-full bg-blue-500 inline-block"></span>
-          Ecommerce Infrastructure
+        <span class="inline-flex items-center gap-2 bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full">
+          <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 inline-block"></span>
+          Freelancer Payment Tool
         </span>
       </div>
 
       <!-- Headline + tagline -->
       <div>
-        <h1 class="text-5xl font-black text-slate-900 leading-tight mb-5">
-          One Platform.<br/>
-          Every Gateway.<br/>
-          <span class="text-blue-600">Zero Revenue Leaks.</span>
+        <h1 class="text-6xl font-black text-slate-900 leading-none mb-6">
+          Get Paid.<br/>
+          <span class="text-indigo-600">Instantly.</span>
         </h1>
-        <p class="text-base text-slate-500 leading-relaxed max-w-sm">
-          Centralized payment routing, real-time transaction monitoring, and unified order management — built for merchants who can't afford failed payments.
+        <p class="text-base text-slate-500 leading-relaxed max-w-xs">
+          The fastest way for freelancers to create a payment request, collect UPI payments via Razorpay, and keep a clean record — all in three taps.
         </p>
+
+        <!-- Flow pill -->
+        <div class="inline-flex items-center gap-2 mt-6 bg-slate-50 border border-slate-200 rounded-full px-4 py-2 text-xs font-semibold text-slate-600">
+          <span>Home</span>
+          <span class="text-slate-300">→</span>
+          <span>Payment</span>
+          <span class="text-slate-300">→</span>
+          <span>Result</span>
+        </div>
       </div>
 
       <!-- Attribution -->
@@ -39,26 +47,33 @@
       </div>
     </div>
 
-    <!-- Right: Visual panel -->
-    <div class="sl-visual relative overflow-hidden bg-gradient-to-br from-slate-900 via-blue-950 to-blue-900">
+    <!-- Right: Visual -->
+    <div class="sl-visual relative overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-slate-900">
       <img
-        src="https://api.qb-deck.quantumbyte.ai/common/image-generation?prompt=sleek%20fintech%20payment%20gateway%20dashboard%20dark%20navy%20UI%20with%20transaction%20flow%20charts%20glowing%20data%20streams%20multiple%20payment%20providers%20unified%20interface%20professional%20editorial"
-        alt="GatewayHub Platform"
-        class="w-full h-full object-cover opacity-50"
+        src="https://api.qb-deck.quantumbyte.ai/common/image-generation?prompt=freelancer%20on%20minimal%20desk%20receiving%20UPI%20payment%20notification%20on%20phone%20green%20success%20checkmark%20clean%20minimal%20fintech%20style%20dark%20background%20professional"
+        alt="PayFlow in use"
+        class="w-full h-full object-cover opacity-40"
       />
 
-      <!-- Floating product badge -->
-      <div class="absolute bottom-10 left-8 right-8">
-        <div class="bg-white bg-opacity-10 backdrop-blur-sm border border-white border-opacity-20 rounded-2xl px-6 py-4">
-          <div class="text-white text-2xl font-black tracking-tight">GatewayHub</div>
-          <div class="text-blue-200 text-xs font-semibold tracking-widest uppercase mt-0.5">Payment Gateway Platform</div>
+      <!-- Floating success card -->
+      <div class="absolute bottom-10 left-6 right-6">
+        <div class="bg-white rounded-2xl p-5 shadow-xl">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Payment Received</span>
+            <span class="inline-flex items-center gap-1 bg-green-100 text-green-700 text-xs font-bold px-2.5 py-1 rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-500 inline-block"></span>
+              Success
+            </span>
+          </div>
+          <div class="text-3xl font-black text-slate-900">₹5,000</div>
+          <div class="text-slate-500 text-sm mt-1">Logo Design · pay_KXwj81NmLp</div>
         </div>
       </div>
 
-      <!-- Stat pill top-right -->
-      <div class="absolute top-8 right-8 bg-blue-600 rounded-xl px-4 py-2 text-white text-center">
-        <div class="text-xl font-black">4–6×</div>
-        <div class="text-blue-100 text-xs">fewer portals to manage</div>
+      <!-- App name badge top-right -->
+      <div class="absolute top-8 right-8 text-right">
+        <div class="text-white text-2xl font-black">PayFlow</div>
+        <div class="text-indigo-200 text-xs font-semibold tracking-widest uppercase">UPI · Razorpay · Local</div>
       </div>
     </div>
 
