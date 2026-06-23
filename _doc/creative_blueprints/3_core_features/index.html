@@ -8,69 +8,83 @@
 
     <!-- Header -->
     <div class="mb-5">
-      <div class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-1">Built for Every Role</div>
-      <h2 class="text-3xl font-black text-slate-900">Core Features</h2>
+      <div class="text-xs font-bold tracking-widest uppercase text-slate-400 mb-1">Built for the Solo Professional</div>
+      <h2 class="text-3xl font-black text-slate-900">What PayFlow Does</h2>
     </div>
 
-    <!-- Persona chips -->
+    <!-- Persona chip -->
     <div class="flex gap-2 mb-5">
-      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-blue-600 text-white border border-blue-600">
-        🏪 Merchant
-      </span>
-      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-200 text-slate-500">
-        ⚙️ Payment Ops
-      </span>
-      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-200 text-slate-500">
-        📊 Finance Team
+      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-indigo-600 text-white">
+        💼 Freelancer
       </span>
     </div>
 
-    <!-- Feature card grid -->
+    <!-- Feature grid: 3 screens + 3 supporting features -->
     <div class="grid grid-cols-3 gap-4 flex-1">
 
-      <!-- Card 1 -->
-      <div class="bg-blue-600 rounded-2xl p-5 flex flex-col">
-        <div class="text-2xl mb-3">🔌</div>
-        <div class="text-white font-bold text-sm mb-1">Multi-Gateway Hub</div>
-        <div class="text-blue-100 text-xs leading-relaxed flex-1">Connect Stripe, PayPal, Midtrans, and local acquirers. View gateway health status — all from one dashboard.</div>
+      <!-- Home Screen -->
+      <div class="bg-indigo-600 rounded-2xl p-5 flex flex-col">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-2xl">🏠</span>
+          <span class="bg-white bg-opacity-20 text-white text-xs font-bold px-2 py-0.5 rounded-full">Screen 1</span>
+        </div>
+        <div class="text-white font-bold text-sm mb-1">Home Screen</div>
+        <div class="text-indigo-100 text-xs leading-relaxed flex-1">
+          Freelancer dashboard: "Create Payment Request" + "Quick UPI Payment" actions. Recent transactions list showing amount, service name, and status from local storage.
+        </div>
       </div>
 
-      <!-- Card 2 -->
+      <!-- Payment Screen -->
       <div class="bg-slate-900 rounded-2xl p-5 flex flex-col">
-        <div class="text-2xl mb-3">🔀</div>
-        <div class="text-white font-bold text-sm mb-1">Smart Routing Engine</div>
-        <div class="text-slate-300 text-xs leading-relaxed flex-1">Route by geography, card type, amount, or custom if/then rules. Every decision logged and auditable — no black box.</div>
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-2xl">💳</span>
+          <span class="bg-white bg-opacity-10 text-white text-xs font-bold px-2 py-0.5 rounded-full">Screen 2</span>
+        </div>
+        <div class="text-white font-bold text-sm mb-1">Payment Screen</div>
+        <div class="text-slate-300 text-xs leading-relaxed flex-1">
+          Amount input (required) + description/service name (optional). Tapping "Pay" converts amount to paise and opens Razorpay Checkout with optional contact/email prefill.
+        </div>
       </div>
 
-      <!-- Card 3 -->
+      <!-- Result Screen -->
       <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col">
-        <div class="text-2xl mb-3">📡</div>
-        <div class="text-slate-900 font-bold text-sm mb-1">Real-Time Monitor</div>
-        <div class="text-slate-500 text-xs leading-relaxed flex-1">Live transaction feed with status codes, error descriptions, retry actions, and full event history per payment.</div>
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-2xl">✅</span>
+          <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-0.5 rounded-full">Screen 3</span>
+        </div>
+        <div class="text-slate-900 font-bold text-sm mb-1">Result Screen</div>
+        <div class="text-slate-500 text-xs leading-relaxed flex-1">
+          <span class="text-green-600 font-semibold">Success (green)</span>: shows Payment ID + amount + description. <span class="text-red-600 font-semibold">Failed (red)</span>: shows failure status. Simple centered UI, no extras.
+        </div>
       </div>
 
-      <!-- Card 4 -->
+      <!-- Razorpay Integration -->
+      <div class="bg-indigo-50 border border-indigo-200 rounded-2xl p-5 flex flex-col">
+        <div class="text-2xl mb-3">⚡</div>
+        <div class="text-slate-900 font-bold text-sm mb-1">Razorpay UPI</div>
+        <div class="text-slate-600 text-xs leading-relaxed flex-1">
+          Handles <code class="bg-indigo-100 px-1 rounded text-indigo-700">PAYMENT_SUCCESS</code> and <code class="bg-indigo-100 px-1 rounded text-indigo-700">PAYMENT_ERROR</code> events. Real checkout flow — no fake payments, no mock data.
+        </div>
+      </div>
+
+      <!-- Local Storage -->
       <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col">
-        <div class="text-2xl mb-3">📦</div>
-        <div class="text-slate-900 font-bold text-sm mb-1">Order Management</div>
-        <div class="text-slate-500 text-xs leading-relaxed flex-1">Unified order view — payment status, fulfillment state, and automatic order-to-payment reconciliation built in.</div>
+        <div class="text-2xl mb-3">💾</div>
+        <div class="text-slate-900 font-bold text-sm mb-1">Local Transaction Log</div>
+        <div class="text-slate-500 text-xs leading-relaxed flex-1">
+          Every payment saved: amount, description, paymentId, status, timestamp. No backend, no login, no cloud required in MVP.
+        </div>
       </div>
 
-      <!-- Card 5 -->
-      <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 flex flex-col">
-        <div class="text-2xl mb-3">🔍</div>
-        <div class="text-slate-900 font-bold text-sm mb-1">Failure Analytics</div>
-        <div class="text-slate-600 text-xs leading-relaxed flex-1">Pattern detection by gateway, card type, and time window. Surfaces fix recommendations — not just error codes.</div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="bg-white border border-slate-200 rounded-2xl p-5 flex flex-col">
-        <div class="text-2xl mb-3">🔗</div>
-        <div class="text-slate-900 font-bold text-sm mb-1">Webhook Manager</div>
-        <div class="text-slate-500 text-xs leading-relaxed flex-1">Configure, test, and monitor webhook endpoints across all connected gateways from a single interface.</div>
+      <!-- Architecture -->
+      <div class="bg-slate-900 rounded-2xl p-5 flex flex-col">
+        <div class="text-2xl mb-3">🏗️</div>
+        <div class="text-white font-bold text-sm mb-1">Clean Architecture</div>
+        <div class="text-slate-300 text-xs leading-relaxed flex-1">
+          Structured for growth: <span class="text-indigo-300">screens/</span> · <span class="text-indigo-300">services/</span> · <span class="text-indigo-300">models/</span> · <span class="text-indigo-300">widgets/</span>. Ready for invoice PDF, client management, cloud sync in future phases.
+        </div>
       </div>
 
     </div>
-
   </div>
 </section>
